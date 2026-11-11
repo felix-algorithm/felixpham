@@ -9840,7 +9840,6 @@ blockquote {
   }
 }
 
-/* Horizontal (Landscape) Frame Overrides for Gallery */
 .reportage-content { justify-content: center !important; align-items: center !important; }
 .reportage-block { width: 36vw !important; height: 27vw !important; justify-content: center !important; align-items: center !important; position: relative !important; }
 .poster-block { width: 36vw !important; height: 27vw !important; aspect-ratio: 4 / 3 !important; margin-top: 0 !important; inset: 0 !important; position: relative !important; }

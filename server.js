@@ -29,14 +29,12 @@ const server = http.createServer((req, res) => {
 
   let filePath = path.join(root, reqPath);
 
-  // Clean URL support: /gallery -> /gallery.html, /commission -> /commission.html
   if (!fs.existsSync(filePath) || !fs.statSync(filePath).isFile()) {
     if (fs.existsSync(filePath + '.html') && fs.statSync(filePath + '.html').isFile()) {
       filePath = filePath + '.html';
     }
   }
 
-  // Alias /reportage -> gallery.html if reportage is requested
   if (!fs.existsSync(filePath) && reqPath === '/reportage') {
     filePath = path.join(root, 'gallery.html');
   }
@@ -46,7 +44,6 @@ const server = http.createServer((req, res) => {
     const ext = path.extname(filePath).toLowerCase();
     const contentType = mimeTypes[ext] || 'application/octet-stream';
 
-    // HTTP 206 Partial Content support for video streaming / scrubbing
     if (ext === '.mp4' || ext === '.webm') {
       const range = req.headers.range;
       if (range) {
@@ -93,7 +90,6 @@ const server = http.createServer((req, res) => {
   }
 });
 
-// Start server with automatic port retry if port is in use
 function startServer(port) {
   server.listen(port, () => {
     const url = `http://localhost:${port}`;
@@ -104,7 +100,7 @@ function startServer(port) {
     console.log(`  🔗 03. Commission: ${url}/commission`);
     console.log(`  🔗 04. Contact:    ${url}/contact`);
     console.log(`======================================================\n`);
-    
+
     exec(`start ${url}`);
   });
 }
