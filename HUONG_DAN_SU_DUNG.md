@@ -42,7 +42,8 @@ Dự án này là trang web tĩnh thuần túy (HTML, CSS, JS, Fonts, Media), ho
 ## 3. Cấu trúc các trang trong dự án
 
 * **`index.html`**: Trang chủ (Dự án chính dạng Slider 3D toàn màn hình & Danh sách List View).
-* **`reportage.html`**: Trang triển lãm ảnh phóng sự / hậu trường phim tài liệu.
+* **`gallery.html`**: Trang triển lãm ảnh bộ sưu tập / phóng sự / hậu trường phim tài liệu.
+* **`commission.html`**: Trang biểu phí và dịch vụ sản xuất.
 * **`about.html`**: Trang giới thiệu tiểu sử, đối tác & giải thưởng.
 * **`archive.html`**: Trang lưu trữ danh mục tác phẩm.
 * **`contact.html`**: Trang thông tin liên hệ.

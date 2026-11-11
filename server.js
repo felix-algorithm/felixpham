@@ -35,7 +35,7 @@ const server = http.createServer((req, res) => {
     }
   }
 
-  if (!fs.existsSync(filePath) && reqPath === '/reportage') {
+  if (!fs.existsSync(filePath) && (reqPath === '/reportage' || reqPath === '/reportage.html')) {
     filePath = path.join(root, 'gallery.html');
   }
 
